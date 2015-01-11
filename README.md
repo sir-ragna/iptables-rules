@@ -1,4 +1,5 @@
 
+
 # Only allow national SSH connections #
 
 Based upon IP ranges found at [http://www.nirsoft.net/countryip/be.html](nirSoft).
@@ -20,4 +21,16 @@ I don't want these attackers to even know there is a connection possible on port
 I didn't specify a NIC because my network config tends to change.
 It is however better if you specify the NIC.
 If you don't, these rules will get checked for every interface and might cause more overhead than needed.
+
+## usage ##
+
+On Debian, if you'd like to apply these rules and make them persistent.
+
+        ./iptrules.sh 
+        iptables-save > /etc/iptables.up.rules 
+        cat > /etc/network/if-pre-up.d/iptables << EOF
+        #!/bin/sh
+        /sbin/iptables-restore < /etc/iptables.up.rules
+        EOF
+        chmod +x /etc/network/if-pre-up.d/iptables
 
