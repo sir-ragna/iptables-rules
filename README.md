@@ -2,7 +2,7 @@
 
 # Only allow national SSH connections #
 
-Based upon IP ranges found at [http://www.nirsoft.net/countryip/be.html](nirSoft).
+Based upon IP ranges found at [http://www.nirsoft.net/countryip/be.html](http://www.nirsoft.net/countryip/be.html).
 You can download the csv for your own country and modify the script.
 
 The goal is to block all foreign IP traffic (on port 22).
